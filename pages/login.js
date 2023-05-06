@@ -30,9 +30,19 @@ export default function login() {
   const onSignInSubmit = (e) => {
     e.preventDefault();
     const auth = getAuth();
-    const phoneNumber = "+91 " + phone;
+    const phoneNumber = "+91" + phone;
     console.log(phoneNumber);
-    const appVerifier = setUpRecaptcha();
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      "sign-in-button",
+      {
+        size: "invisible",
+        callback: (response) => {
+          console.log("Captcha Resolved");
+        },
+      },
+      auth
+    );
+    const appVerifier = window.recaptchaVerifier;
 
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       .then((confirmationResult) => {
