@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.title{
+  font-family: 'Castoro Titling',cursive;
+
+}
+.sellButton{
+  border: 2px solid #FE763B;
+  border-radius: 10px;
+  color: #FE763B;
+  font-weight: 600;
+}
+.sellButton:hover{
+  color: white;
+  background-color: #FE763B;
+  -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
