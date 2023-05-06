@@ -7,10 +7,12 @@ import firebaseConfig from "../firebase";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { useState } from "react";
 import { signInWithPhoneNumber } from "firebase/auth";
+import { useRouter } from "next/router";
 
 export default function login() {
   const [phone, setPhone] = useState("");
   const [otp, setOTP] = useState("");
+  const router=useRouter();
 
   const setUpRecaptcha = () => {
     const auth = getAuth();
@@ -60,12 +62,14 @@ export default function login() {
   const onSubmitOtp = (e) => {
     e.preventDefault();
     const otpInput = otp;
+    
     // console.log(codee);
     confirmationResult
       .confirm(otpInput)
       .then((result) => {
         const user = result.user;
         console.log("correct otp")
+        router.push('/store')
       })
       .catch((error) => {
         console.log(error);
