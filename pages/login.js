@@ -65,6 +65,7 @@ export default function login() {
       .confirm(otpInput)
       .then((result) => {
         const user = result.user;
+        console.log("correct otp")
       })
       .catch((error) => {
         console.log(error);
