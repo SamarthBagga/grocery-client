@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import firebaseConfig from "./firebase";
+import firebaseConfig from "../firebase";
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import { useState } from "react";
 import { signInWithPhoneNumber } from "firebase/auth";
